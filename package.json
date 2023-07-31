@@ -1,5 +1,5 @@
 {
-  "name": "{{name_of_lib}}",
+  "name": "solid-currency-input-field",
   "version": "0.0.0",
   "description": "{{desc_of_lib}}",
   "license": "MIT",
@@ -7,15 +7,13 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{me}}/{{name_of_lib}}.git"
+    "url": "git+https://github.com/{{me}}/solid-currency-input-field.git"
   },
-  "homepage": "https://github.com/{{me}}/{{name_of_lib}}#readme",
+  "homepage": "https://github.com/{{me}}/solid-currency-input-field#readme",
   "bugs": {
-    "url": "https://github.com/{{me}}/{{name_of_lib}}/issues"
+    "url": "https://github.com/{{me}}/solid-currency-input-field/issues"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -75,9 +73,7 @@
     "vite-plugin-solid": "^2.7.0",
     "vitest": "^0.33.0"
   },
-  "keywords": [
-    "solid"
-  ],
+  "keywords": ["solid"],
   "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=18",

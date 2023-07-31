@@ -1,36 +1,27 @@
 <p>
-  <img width="100%" src="https://assets.solidjs.com/banner?type={{name_of_lib}}&background=tiles&project=%20" alt="{{name_of_lib}}">
+  <img width="100%" src="https://assets.solidjs.com/banner?type=solid-currency-input-field&background=tiles&project=%20" alt="solid-currency-input-field">
 </p>
 
-# {{name_of_lib}}
+# solid-currency-input-field
 
 [![pnpm](https://img.shields.io/badge/maintained%20with-pnpm-cc00ff.svg?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
 
-{{desc_of_lib}}
-
-> **Note** After using this template, you have to search and replace all `{{name_of_lib}}` and similar strings
-> with appropriate texts.
->
-> `{{name_of_lib}}` should be a **kebab-case** string representing the name of you monorepo.
->
-> `{{desc_of_lib}}` should be a **Normal case** string with the description of the repository.
->
-> `{{me}}` should be a **kebab-case** string from your profile URL.
+Solid JS <input/> component for formatting currency and numbers.
 
 ## Quick start
 
 Install it:
 
 ```bash
-npm i {{name_of_lib}}
+npm i solid-currency-input-field
 # or
-yarn add {{name_of_lib}}
+yarn add solid-currency-input-field
 # or
-pnpm add {{name_of_lib}}
+pnpm add solid-currency-input-field
 ```
 
 Use it:
 
 ```tsx
-import {{name_of_lib}} from '{{name_of_lib}}'
+import solid-currency-input-field from 'solid-currency-input-field'
 ```
