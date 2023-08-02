@@ -1,21 +1,19 @@
 {
   "name": "solid-currency-input-field",
   "version": "0.0.0",
-  "description": "{{desc_of_lib}}",
+  "description": "Solid-JS <input/> component for formatting currency and numbers.",
   "license": "MIT",
-  "author": "{{me}}",
+  "author": "nsaritzky",
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/{{me}}/solid-currency-input-field.git"
+    "url": "git+https://github.com/nsaritzky/solid-currency-input-field.git"
   },
-  "homepage": "https://github.com/{{me}}/solid-currency-input-field#readme",
+  "homepage": "https://github.com/nsaritzky/solid-currency-input-field#readme",
   "bugs": {
-    "url": "https://github.com/{{me}}/solid-currency-input-field/issues"
+    "url": "https://github.com/nsaritzky/solid-currency-input-field/issues"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "private": false,
   "sideEffects": false,
   "type": "module",
@@ -55,9 +53,7 @@
   },
   "typesVersions": {
     "*": {
-      "examples": [
-        "./dist/examples/index.d.ts"
-      ]
+      "examples": ["./dist/examples/index.d.ts"]
     }
   },
   "scripts": {
@@ -99,9 +95,7 @@
     "vite-plugin-solid": "^2.7.0",
     "vitest": "^0.33.0"
   },
-  "keywords": [
-    "solid"
-  ],
+  "keywords": ["solid"],
   "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=18",
