@@ -13,31 +13,53 @@
   "bugs": {
     "url": "https://github.com/{{me}}/solid-currency-input-field/issues"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "private": false,
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index/index.js",
+  "module": "./dist/index/index.js",
+  "types": "./dist/index/index.d.ts",
   "browser": {},
   "exports": {
-    "solid": {
-      "development": "./dist/dev.jsx",
-      "import": "./dist/index.jsx"
-    },
-    "development": {
+    ".": {
+      "development": {
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/dev.js"
+        }
+      },
       "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/dev.js"
+        "types": "./dist/index/index.d.ts",
+        "default": "./dist/index/index.js"
       }
     },
-    "import": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+    "./examples": {
+      "solid": {
+        "development": "./dist/examples/dev.jsx",
+        "import": "./dist/examples/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/examples/index.d.ts",
+          "default": "./dist/examples/dev.js"
+        }
+      },
+      "import": {
+        "types": "./dist/examples/index.d.ts",
+        "default": "./dist/examples/index.js"
+      }
     }
   },
-  "typesVersions": {},
+  "typesVersions": {
+    "*": {
+      "examples": [
+        "./dist/examples/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "dev": "vite serve dev",
     "build": "tsup",
@@ -55,6 +77,9 @@
     "solid-js": "^1.6.0"
   },
   "devDependencies": {
+    "@solidjs/testing-library": "^0.8.4",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/user-event": "^14.4.3",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "concurrently": "^8.2.0",
@@ -63,6 +88,7 @@
     "eslint": "^8.45.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-solid": "^0.12.1",
     "jsdom": "^22.1.0",
     "prettier": "3.0.0",
     "solid-js": "^1.7.8",
@@ -73,10 +99,15 @@
     "vite-plugin-solid": "^2.7.0",
     "vitest": "^0.33.0"
   },
-  "keywords": ["solid"],
+  "keywords": [
+    "solid"
+  ],
   "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=18",
     "pnpm": ">=8.6.0"
+  },
+  "dependencies": {
+    "@solid-primitives/input-mask": "^0.2.0"
   }
 }

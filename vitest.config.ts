@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
             include: ['test/server.test.{ts,tsx}'],
           }
         : {
-            include: ['test/*.test.{ts,tsx}'],
+            include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
             exclude: ['test/server.test.{ts,tsx}'],
           }),
     },
