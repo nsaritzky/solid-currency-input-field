@@ -9,13 +9,13 @@ type Overwrite<T, U> = Pick<T, Exclude<keyof T, keyof U>> & U
  */
 export type CurrencyInputOnChangeValues = {
   /**
-   * Value as float or null if empty
+   * Value as float or undefined if empty
    *
    * Example:
    *   "1.99" > 1.99
-   *   "" > null
+   *   "" > undefined
    */
-  float: number | null
+  float: number | undefined
 
   /**
    * Value after applying formatting
@@ -105,14 +105,29 @@ export type CurrencyInputProps = Overwrite<
      */
     disabled?: boolean
 
+    /**
+     * Handle change event
+     */
     onChange?: JSX.ChangeEventHandler<HTMLInputElement, Event>
 
+    /**
+     * Handle focus event
+     */
     onFocus?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
 
+    /**
+     * Handle blur event
+     */
     onBlur?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
 
+    /**
+     * Handle key down event
+     */
     onKeyDown?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
 
+    /**
+     * Handle key up event
+     */
     onKeyUp?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
 
     /**

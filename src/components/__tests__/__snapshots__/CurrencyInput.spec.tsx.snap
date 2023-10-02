@@ -2,48 +2,18 @@
 
 exports[`<CurrencyInput/> > Renders with default value 1`] = `
 <input
-  allowdecimals="true"
-  allownegativevalues="true"
-  defaultvalue="1234.56"
-  disabledabbreviations="false"
-  disablegroupseparators="false"
   inputmode="decimal"
-  prefix="£"
   type="text"
 />
 `;
 
 exports[`<CurrencyInput/> > Renders without error 1`] = `
 <input
-  allowdecimals="true"
-  allownegativevalues="true"
-  class="form-control"
-  disabledabbreviations="false"
-  disablegroupseparators="false"
-  id="validationCustom01"
-  inputmode="decimal"
-  name="inputName"
-  placeholder="£1,000"
-  type="text"
-/>
-`;
-
-exports[`<CurrencyInput/> Renders with default value 1`] = `
-<input
-  inputmode="decimal"
-  type="text"
-  value="£1,234.56"
-/>
-`;
-
-exports[`<CurrencyInput/> Renders without error 1`] = `
-<input
   class="form-control"
   id="validationCustom01"
   inputmode="decimal"
   name="inputName"
   placeholder="£1,000"
   type="text"
-  value=""
 />
 `;

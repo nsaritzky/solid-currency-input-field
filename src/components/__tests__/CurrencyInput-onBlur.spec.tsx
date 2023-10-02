@@ -51,7 +51,7 @@ describe('<CurrencyInput/> onBlur', () => {
       </>
     ))
 
-    userEvent.type(screen.getByRole('textbox'), '0')
+    await userEvent.type(screen.getByRole('textbox'), '0')
     await userEvent.click(screen.getByRole('button'))
 
     expect(onBlurSpy).toBeCalled()
@@ -67,6 +67,7 @@ describe('<CurrencyInput/> onBlur', () => {
       </>
     ))
 
+    await userEvent.click(screen.getByRole('textbox'))
     await userEvent.click(screen.getByRole('button'))
 
     expect(onBlurSpy).toBeCalled()

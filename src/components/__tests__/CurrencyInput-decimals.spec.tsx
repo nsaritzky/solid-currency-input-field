@@ -69,7 +69,7 @@ describe('<CurrencyInput/> decimals', () => {
 
     expect(screen.getByRole('textbox')).toHaveValue('.')
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })
@@ -118,7 +118,7 @@ describe('<CurrencyInput/> decimals', () => {
 
     expect(screen.getByRole('textbox')).toHaveValue(',')
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })

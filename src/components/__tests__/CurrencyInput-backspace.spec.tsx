@@ -87,7 +87,7 @@ describe('<CurrencyInput/> backspace', () => {
     await userEvent.type(screen.getByRole('textbox'), '{backspace}')
 
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })

@@ -1,4 +1,4 @@
-import type { JSX, Component } from 'solid-js'
+import type { JSX } from 'solid-js'
 import { createSignal, createEffect, createMemo, mergeProps, splitProps } from 'solid-js'
 import { CurrencyInputProps, CurrencyInputOnChangeValues } from './CurrencyInputProps'
 import {
@@ -14,7 +14,7 @@ import {
   repositionCursor,
 } from './utils'
 
-export const CurrencyInput: Component<CurrencyInputProps> = (
+export const CurrencyInput = (
   /* {
    *   allowDecimals = true,
    *   allowNegativeValue = true,
@@ -160,6 +160,7 @@ export const CurrencyInput: Component<CurrencyInputProps> = (
         })
       : ''
 
+  // eslint-disable-next-line solid/reactivity
   const [stateValue, setStateValue] = createSignal(formattedStateValue())
   const [dirty, setDirty] = createSignal(false)
   const [cursor, setCursor] = createSignal(0)
@@ -190,7 +191,7 @@ export const CurrencyInput: Component<CurrencyInputProps> = (
 
     if (stringValue === '' || stringValue === '-' || stringValue === decimalSeparator()) {
       props.onValueChange &&
-        props.onValueChange(undefined, props.name, { float: null, formatted: '', value: '' })
+        props.onValueChange(undefined, props.name, { float: undefined, formatted: '', value: '' })
       setStateValue(stringValue)
       // Always sets cursor after '-' or decimalSeparator input
       setCursor(1)
@@ -239,6 +240,7 @@ export const CurrencyInput: Component<CurrencyInputProps> = (
 
     processChange(value, selectionStart)
     event.target.value = getRenderValue()
+    event.target.setSelectionRange(cursor(), cursor())
     props.onChange && props.onChange(event)
   }
 
@@ -357,7 +359,7 @@ export const CurrencyInput: Component<CurrencyInputProps> = (
         decimalSeparator: decimalSeparator(),
       })
 
-      if (suffix && selectionStart && selectionStart > stateValue.length - suffix.length) {
+      if (suffix && selectionStart && selectionStart > stateValue().length - suffix.length) {
         /* istanbul ignore else */
         if (inputRef) {
           const newCursor = stateValue().length - suffix.length
@@ -375,10 +377,6 @@ export const CurrencyInput: Component<CurrencyInputProps> = (
     if (dirty() && stateValue() !== '-' && inputRef && document.activeElement === inputRef) {
       inputRef.setSelectionRange(cursor(), cursor())
     }
-  })
-
-  createEffect(() => {
-    console.log(`cursor: ${cursor()}`)
   })
 
   /**

@@ -74,7 +74,7 @@ describe('<CurrencyInput/> abbreviated', () => {
     await userEvent.type(screen.getByRole('textbox'), 'k')
 
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })
@@ -84,7 +84,7 @@ describe('<CurrencyInput/> abbreviated', () => {
     await userEvent.type(screen.getByRole('textbox'), 'M')
 
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })

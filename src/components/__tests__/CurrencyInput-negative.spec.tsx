@@ -53,7 +53,7 @@ describe('<CurrencyInput/> negative value', () => {
     await userEvent.clear(screen.getByRole('textbox'))
     await userEvent.type(screen.getByRole('textbox'), '-')
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })
@@ -84,7 +84,7 @@ describe('<CurrencyInput/> negative value', () => {
     expect(screen.getByRole('textbox')).toHaveValue('-')
     expect(onValueChangeSpy).toBeCalledTimes(7)
     expect(onValueChangeSpy).toHaveBeenLastCalledWith(undefined, undefined, {
-      float: null,
+      float: undefined,
       formatted: '',
       value: '',
     })
