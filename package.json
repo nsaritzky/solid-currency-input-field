@@ -90,7 +90,7 @@
     "vite-plugin-solid": "^2.7.0",
     "vitest": "^0.33.0"
   },
-  "keywords": ["solid"],
+  "keywords": ["solid", "front-end", "form", "input", "field"],
   "packageManager": "pnpm@8.6.0",
   "engines": {
     "node": ">=18",

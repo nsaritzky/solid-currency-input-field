@@ -52,7 +52,7 @@ export const Example3: Component = () => {
           <li>Intl config</li>
         </ul>
 
-        <div class="row"></div>
+        <div class="row" />
 
         <div class="row">
           <div class="form-group col">
