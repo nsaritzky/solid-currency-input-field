@@ -54,7 +54,7 @@ import solid-currency-input-field from 'solid-currency-input-field'
 
 ## Examples
 
-[Play with demo](https://cchanxzy.github.io/react-currency-input-field) or view [examples code](https://github.com/cchanxzy/solid-currency-input-field/blob/master/src/examples)
+[Play with demo](https://cchanxzy.github.io/react-currency-input-field) or view [examples code](https://github.com/nsaritzky/solid-currency-input-field/blob/main/src/examples)
 
 [![React Currency Input Demo](demo/demo.gif)](https://cchanxzy.github.io/react-currency-input-field)
 
@@ -72,7 +72,7 @@ import CurrencyInput from 'solid-currency-input-field'
 />
 ```
 
-Have a look in [`src/examples`](https://github.com/nsaritzky/solid-currency-input-field/tree/master/src/examples) for more examples on implementing and validation.
+Have a look in [`src/examples`](https://github.com/nsaritzky/solid-currency-input-field/tree/main/src/examples) for more examples on implementing and validation.
 
 ## Props
 
