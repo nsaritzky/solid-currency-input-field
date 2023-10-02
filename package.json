@@ -105,5 +105,8 @@
   "engines": {
     "node": ">=18",
     "pnpm": ">=8.6.0"
+  },
+  "dependencies": {
+    "solid-currency-input-field": "^0.1.0"
   }
 }
