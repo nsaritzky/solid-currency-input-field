@@ -18,6 +18,7 @@ export default defineConfig(({ mode }) => {
     test: {
       watch: false,
       isolate: !testSSR,
+      globals: true,
       env: {
         NODE_ENV: testSSR ? 'production' : 'development',
         DEV: testSSR ? '' : '1',
@@ -31,7 +32,7 @@ export default defineConfig(({ mode }) => {
             include: ['test/server.test.{ts,tsx}'],
           }
         : {
-            include: ['**/*.{test,spec}.?(c|m)[jt]s?(x)'],
+            include: ['src/**/*.{test,spec}.?(c|m)[jt]s?(x)'],
             exclude: ['test/server.test.{ts,tsx}'],
           }),
     },
