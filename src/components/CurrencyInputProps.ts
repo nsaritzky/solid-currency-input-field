@@ -8,208 +8,213 @@ type Overwrite<T, U> = Pick<T, Exclude<keyof T, keyof U>> & U
  * @experimental
  */
 export type CurrencyInputOnChangeValues = {
-  /**
-   * Value as float or undefined if empty
-   *
-   * Example:
-   *   "1.99" > 1.99
-   *   "" > undefined
-   */
-  float: number | undefined
+    /**
+     * Value as float or undefined if empty
+     *
+     * Example:
+     *   "1.99" > 1.99
+     *   "" > undefined
+     */
+    float: number | undefined
 
-  /**
-   * Value after applying formatting
-   *
-   * Example: "1000000" > "1,000,0000"
-   */
-  formatted: string
+    /**
+     * Value after applying formatting
+     *
+     * Example: "1000000" > "1,000,0000"
+     */
+    formatted: string
 
-  /**
-   * Non formatted value as string
-   */
-  value: string
+    /**
+     * Non formatted value as string
+     */
+    value: string
 }
 
 export type IntlConfig = {
-  locale: string
-  currency?: string
+    locale: string
+    currency?: string
 }
 
 export type CurrencyInputProps = Overwrite<
-  JSX.InputHTMLAttributes<HTMLInputElement>,
-  {
-    /**
-     * Allow decimals
-     *
-     * Default = true
-     */
-    allowDecimals?: boolean
+    JSX.InputHTMLAttributes<HTMLInputElement>,
+    {
+        /**
+         * Allow decimals
+         *
+         * Default = true
+         */
+        allowDecimals?: boolean
 
-    /**
-     * Allow user to enter negative value
-     *
-     * Default = true
-     */
-    allowNegativeValue?: boolean
+        /**
+         * Allow user to enter negative value
+         *
+         * Default = true
+         */
+        allowNegativeValue?: boolean
 
-    min?: number
-    max?: number
+        min?: number
+        max?: number
 
-    /**
-     * Component id
-     */
-    id?: string
+        /**
+         * Component id
+         */
+        id?: string
 
-    /**
-     *  Maximum characters the user can enter
-     */
-    maxLength?: number
+        /**
+         *  Maximum characters the user can enter
+         */
+        maxLength?: number
 
-    /**
-     * Class names
-     */
-    className?: string
+        /**
+         * Class names
+         */
+        className?: string
 
-    /**
-     * Custom component
-     *
-     * Default = <input/>
-     */
-    customInput?: JSX.Element
+        /**
+         * Custom component
+         *
+         * Default = <input/>
+         */
+        customInput?: JSX.Element
 
-    /**
-     * Limit length of decimals allowed
-     *
-     * Default = 2
-     */
-    decimalsLimit?: number
+        /**
+         * Limit length of decimals allowed
+         *
+         * Default = 2
+         */
+        decimalsLimit?: number
 
-    /**
-     * Specify decimal scale for padding/trimming
-     *
-     * Example:
-     *   1.5 -> 1.50
-     *   1.234 -> 1.23
-     */
-    decimalScale?: number
+        /**
+         * Specify decimal scale for padding/trimming
+         *
+         * Example:
+         *   1.5 -> 1.50
+         *   1.234 -> 1.23
+         */
+        decimalScale?: number
 
-    /**
-     * Default value if not passing in value via props
-     */
-    defaultValue?: number | string
+        /**
+         * Default value if not passing in value via props
+         */
+        defaultValue?: number | string
 
-    /**
-     * Disabled
-     *
-     * Default = false
-     */
-    disabled?: boolean
+        /**
+         * Disabled
+         *
+         * Default = false
+         */
+        disabled?: boolean
 
-    /**
-     * Handle change event
-     */
-    onChange?: JSX.ChangeEventHandler<HTMLInputElement, Event>
+        /**
+         * Handle change event
+         */
+        onChange?: JSX.ChangeEventHandler<HTMLInputElement, Event>
 
-    /**
-     * Handle focus event
-     */
-    onFocus?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
+        /**
+         * Handle Input event
+         */
+        onInput?: JSX.InputEventHandler<HTMLInputElement, InputEvent>
 
-    /**
-     * Handle blur event
-     */
-    onBlur?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
+        /**
+         * Handle focus event
+         */
+        onFocus?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
 
-    /**
-     * Handle key down event
-     */
-    onKeyDown?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
+        /**
+         * Handle blur event
+         */
+        onBlur?: JSX.FocusEventHandler<HTMLInputElement, FocusEvent>
 
-    /**
-     * Handle key up event
-     */
-    onKeyUp?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
+        /**
+         * Handle key down event
+         */
+        onKeyDown?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
 
-    /**
-     * Value will always have the specified length of decimals
-     *
-     * Example:
-     *   123 -> 1.23
-     *
-     * Note: This formatting only happens onBlur
-     */
-    fixedDecimalLength?: number
+        /**
+         * Handle key up event
+         */
+        onKeyUp?: JSX.EventHandler<HTMLInputElement, KeyboardEvent>
 
-    /**
-     * Handle change in value
-     */
-    onValueChange?: (
-      value: string | undefined,
-      name?: string,
-      values?: CurrencyInputOnChangeValues,
-    ) => void
+        /**
+         * Value will always have the specified length of decimals
+         *
+         * Example:
+         *   123 -> 1.23
+         *
+         * Note: This formatting only happens onBlur
+         */
+        fixedDecimalLength?: number
 
-    /**
-     * Placeholder if there is no value
-     */
-    placeholder?: string
+        /**
+         * Handle change in value
+         */
+        onValueChange?: (
+            value: string | undefined,
+            name?: string,
+            values?: CurrencyInputOnChangeValues,
+        ) => void
 
-    /**
-     * Include a prefix eg. £
-     */
-    prefix?: string
+        /**
+         * Placeholder if there is no value
+         */
+        placeholder?: string
 
-    /**
-     * Include a suffix eg. €
-     */
-    suffix?: string
+        /**
+         * Include a prefix eg. £
+         */
+        prefix?: string
 
-    /**
-     * Incremental value change on arrow down and arrow up key press
-     */
-    step?: number
+        /**
+         * Include a suffix eg. €
+         */
+        suffix?: string
 
-    /**
-     * Separator between integer part and fractional part of value.
-     *
-     * This cannot be a number
-     */
-    decimalSeparator?: string
+        /**
+         * Incremental value change on arrow down and arrow up key press
+         */
+        step?: number
 
-    /**
-     * Separator between thousand, million and billion
-     *
-     * This cannot be a number
-     */
-    groupSeparator?: string
+        /**
+         * Separator between integer part and fractional part of value.
+         *
+         * This cannot be a number
+         */
+        decimalSeparator?: string
 
-    /**
-     * Disable auto adding separator between values eg. 1000 -> 1,000
-     *
-     * Default = false
-     */
-    disableGroupSeparators?: boolean
+        /**
+         * Separator between thousand, million and billion
+         *
+         * This cannot be a number
+         */
+        groupSeparator?: string
 
-    /**
-     * Disable abbreviations (m, k, b)
-     *
-     * Default = false
-     */
-    disableAbbreviations?: boolean
+        /**
+         * Disable auto adding separator between values eg. 1000 -> 1,000
+         *
+         * Default = false
+         */
+        disableGroupSeparators?: boolean
 
-    /**
-     * International locale config, examples:
-     *   { locale: 'ja-JP', currency: 'JPY' }
-     *   { locale: 'en-IN', currency: 'INR' }
-     *
-     * Any prefix, groupSeparator or decimalSeparator options passed in
-     * will override Intl Locale config
-     */
-    intlConfig?: IntlConfig
+        /**
+         * Disable abbreviations (m, k, b)
+         *
+         * Default = false
+         */
+        disableAbbreviations?: boolean
 
-    /**
-     * Transform the raw value form the input before parsing
-     */
-    transformRawValue?: (rawValue: string) => string
-  }
+        /**
+         * International locale config, examples:
+         *   { locale: 'ja-JP', currency: 'JPY' }
+         *   { locale: 'en-IN', currency: 'INR' }
+         *
+         * Any prefix, groupSeparator or decimalSeparator options passed in
+         * will override Intl Locale config
+         */
+        intlConfig?: IntlConfig
+
+        /**
+         * Transform the raw value form the input before parsing
+         */
+        transformRawValue?: (rawValue: string) => string
+    }
 >

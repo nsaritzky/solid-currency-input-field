@@ -224,14 +224,28 @@ describe('<CurrencyInput/>', () => {
     expect(screen.getByRole('textbox')).toHaveValue('£0.3')
   })
 
-  it('should call onChange', async () => {
+  it('should call onInput', async () => {
     const onChangeSpy = vi.fn()
-    render(() => <CurrencyInput prefix="£" onChange={onChangeSpy} />)
+    render(() => <CurrencyInput prefix="£" onInput={onChangeSpy} />)
     await userEvent.type(screen.getByRole('textbox'), '123')
 
     expect(onChangeSpy).toBeCalledTimes(3)
 
     expect(screen.getByRole('textbox')).toHaveValue('£123')
+  })
+
+  it('should call onChange', async () => {
+    const onChangeSpy = vi.fn()
+    render(() => (
+      <>
+        <CurrencyInput prefix="£" onChange={onChangeSpy} />
+        <button data-testid="button" />
+      </>
+    ))
+    await userEvent.type(screen.getByRole('textbox'), '123')
+    await userEvent.click(screen.getByTestId('button'))
+
+    expect(onChangeSpy).toBeCalledTimes(1)
   })
 
   it('should call onBlur', async () => {

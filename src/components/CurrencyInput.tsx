@@ -67,6 +67,7 @@ export const CurrencyInput = (
     'onKeyDown',
     'onBlur',
     'onFocus',
+    'onInput',
     'onChange',
     'groupSeparator',
     'decimalSeparator',
@@ -153,12 +154,12 @@ export const CurrencyInput = (
           value: String(props.defaultValue),
         })
       : props.value !== undefined
-      ? formatValue({
-          ...formatValueOptions(),
-          decimalScale: props.decimalScale,
-          value: String(props.value),
-        })
-      : ''
+        ? formatValue({
+            ...formatValueOptions(),
+            decimalScale: props.decimalScale,
+            value: String(props.value),
+          })
+        : ''
 
   // eslint-disable-next-line solid/reactivity
   const [stateValue, setStateValue] = createSignal(formattedStateValue())
@@ -242,6 +243,17 @@ export const CurrencyInput = (
     event.target.value = getRenderValue()
     event.target.setSelectionRange(cursor(), cursor())
     props.onChange && props.onChange(event)
+  }
+
+  const handleOnInput: JSX.InputEventHandler<HTMLInputElement, InputEvent> = event => {
+    const {
+      target: { value, selectionStart },
+    } = event
+
+    processChange(value, selectionStart)
+    event.target.value = getRenderValue()
+    event.target.setSelectionRange(cursor(), cursor())
+    props.onInput && props.onInput(event)
   }
 
   /**
@@ -405,7 +417,8 @@ export const CurrencyInput = (
     name: props.name,
     class: props.class,
     inputMode: 'decimal' as const,
-    onInput: handleOnChange,
+    onChange: handleOnChange,
+    onInput: handleOnInput,
     onBlur: handleOnBlur,
     onFocus: handleOnFocus,
     onKeyDown: handleOnKeyDown,
